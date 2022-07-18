@@ -1,0 +1,345 @@
+{
+	"info": {
+		"_postman_id": "e785578d-261c-4865-9c3f-56d7f16f69d7",
+		"name": "Test CA_Marketing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19022718"
+	},
+	"item": [
+		{
+			"name": "Create New Address",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//var jsonData = JSON.parse(responseBody);",
+							"//postman.SetEnviromentVariable(\"ID\",jsonData.id);",
+							"",
+							"const jsonData = pm.response.json();",
+							"pm.environment.set(\"ID\", jsonData.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sec-ch-ua",
+						"value": "\".Not/A)Brand\";v=\"99\", \"Google Chrome\";v=\"103\", \"Chromium\";v=\"103\""
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "1657586023|PDbn-b4zkq0Y"
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "authorization",
+						"value": "BoXZnji5lLauS_LHSa0hQ8IHBNncacZ8zPFF14L6Jzo.eyJpbnN0YW5jZUlkIjoiZjQ2Y2Q1MDItZjcyZi00NGY3LTk2MzgtNWRhMWRlYjBiNGU3IiwiYXBwRGVmSWQiOiIxNTA1Yjc3NS1lODg1LWViMWItYjY2NS0xZTQ4NWQ5YmY5MGUiLCJtZXRhU2l0ZUlkIjoiMjhiNzkzZDYtNTQyNC00MDU4LTgwNDktMDI2YTRkYjAyODJmIiwic2lnbkRhdGUiOiIyMDIyLTA3LTE4VDAwOjQyOjUxLjE2OFoiLCJ1aWQiOiJjNzNhZDNmNC01NjM2LTRkZjYtODRmZi05ZGUzZDViNmJhYmQiLCJkZW1vTW9kZSI6ZmFsc2UsImFpZCI6ImEwYTQ1NzlmLTM2ODQtNGEyYS05OWE3LWI5YTVhYzQ0MDljMCIsImJpVG9rZW4iOiJkY2RiNDZkNC1hMzBiLTA0YWYtMTY3MS01ZmNiOTMwMDljYzgiLCJzaXRlT3duZXJJZCI6ImY5MTRmMTFjLWFhYjMtNDUyNy04ZDRlLWJhYjc2MjE0M2E2MCIsImV4cGlyYXRpb25EYXRlIjoiMjAyMi0wNy0xOFQwNDo0Mjo1MS4xNjhaIiwiaGFzVXNlclJvbGUiOmZhbHNlfQ"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "commonConfig",
+						"value": "%7B%22brand%22%3A%22wix%22%2C%22BSI%22%3A%22c88f228d-e948-4fe0-b59a-9e32e0661e83%7C2%22%7D"
+					},
+					{
+						"key": "x-wix-brand",
+						"value": "wix"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "X-Wix-Client-Artifact-Id",
+						"value": "addresses-modals"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "host",
+						"value": "addresses.wixapps.net"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"address\": {\n        \"fullName\": {\n            \"firstName\": \"Adam\",\n            \"lastName\": \"Hunt\"\n        },\n        \"company\": \"HuntCo\",\n        \"taxInfo\": {\n            \"id\": null,\n            \"type\": null\n        },\n        \"addressLine1\": \"345 Park Avenue\",\n        \"addressLine2\": \"3D\",\n        \"street\": {\n            \"name\": null,\n            \"number\": null\n        },\n        \"city\": \"New York\",\n        \"country\": \"USA\",\n        \"subdivision\": \"NY\",\n        \"zipCode\": \"10154\",\n        \"phoneNumber\": \"1213456789\",\n        \"location\": {\n            \"latitude\": 40.7576543,\n            \"longitude\": -73.9728429\n        }\n    },\n    \"setAsDefault\": false\n}"
+				},
+				"url": {
+					"raw": "{{URL}}",
+					"host": [
+						"{{URL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Addresses",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "sec-ch-ua",
+						"value": "\".Not/A)Brand\";v=\"99\", \"Google Chrome\";v=\"103\", \"Chromium\";v=\"103\""
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "1657586023|PDbn-b4zkq0Y"
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "authorization",
+						"value": "BoXZnji5lLauS_LHSa0hQ8IHBNncacZ8zPFF14L6Jzo.eyJpbnN0YW5jZUlkIjoiZjQ2Y2Q1MDItZjcyZi00NGY3LTk2MzgtNWRhMWRlYjBiNGU3IiwiYXBwRGVmSWQiOiIxNTA1Yjc3NS1lODg1LWViMWItYjY2NS0xZTQ4NWQ5YmY5MGUiLCJtZXRhU2l0ZUlkIjoiMjhiNzkzZDYtNTQyNC00MDU4LTgwNDktMDI2YTRkYjAyODJmIiwic2lnbkRhdGUiOiIyMDIyLTA3LTE4VDAwOjQyOjUxLjE2OFoiLCJ1aWQiOiJjNzNhZDNmNC01NjM2LTRkZjYtODRmZi05ZGUzZDViNmJhYmQiLCJkZW1vTW9kZSI6ZmFsc2UsImFpZCI6ImEwYTQ1NzlmLTM2ODQtNGEyYS05OWE3LWI5YTVhYzQ0MDljMCIsImJpVG9rZW4iOiJkY2RiNDZkNC1hMzBiLTA0YWYtMTY3MS01ZmNiOTMwMDljYzgiLCJzaXRlT3duZXJJZCI6ImY5MTRmMTFjLWFhYjMtNDUyNy04ZDRlLWJhYjc2MjE0M2E2MCIsImV4cGlyYXRpb25EYXRlIjoiMjAyMi0wNy0xOFQwNDo0Mjo1MS4xNjhaIiwiaGFzVXNlclJvbGUiOmZhbHNlfQ"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "commonConfig",
+						"value": "%7B%22brand%22%3A%22wix%22%2C%22BSI%22%3A%22c88f228d-e948-4fe0-b59a-9e32e0661e83%7C1%22%7D"
+					},
+					{
+						"key": "x-wix-brand",
+						"value": "wix"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "X-Wix-Client-Artifact-Id",
+						"value": "address-book"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "host",
+						"value": "addresses.wixapps.net"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}",
+					"host": [
+						"{{URL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Adress",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "sec-ch-ua",
+						"value": "\".Not/A)Brand\";v=\"99\", \"Google Chrome\";v=\"103\", \"Chromium\";v=\"103\""
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "1657586023|PDbn-b4zkq0Y"
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "authorization",
+						"value": "BoXZnji5lLauS_LHSa0hQ8IHBNncacZ8zPFF14L6Jzo.eyJpbnN0YW5jZUlkIjoiZjQ2Y2Q1MDItZjcyZi00NGY3LTk2MzgtNWRhMWRlYjBiNGU3IiwiYXBwRGVmSWQiOiIxNTA1Yjc3NS1lODg1LWViMWItYjY2NS0xZTQ4NWQ5YmY5MGUiLCJtZXRhU2l0ZUlkIjoiMjhiNzkzZDYtNTQyNC00MDU4LTgwNDktMDI2YTRkYjAyODJmIiwic2lnbkRhdGUiOiIyMDIyLTA3LTE4VDAwOjQyOjUxLjE2OFoiLCJ1aWQiOiJjNzNhZDNmNC01NjM2LTRkZjYtODRmZi05ZGUzZDViNmJhYmQiLCJkZW1vTW9kZSI6ZmFsc2UsImFpZCI6ImEwYTQ1NzlmLTM2ODQtNGEyYS05OWE3LWI5YTVhYzQ0MDljMCIsImJpVG9rZW4iOiJkY2RiNDZkNC1hMzBiLTA0YWYtMTY3MS01ZmNiOTMwMDljYzgiLCJzaXRlT3duZXJJZCI6ImY5MTRmMTFjLWFhYjMtNDUyNy04ZDRlLWJhYjc2MjE0M2E2MCIsImV4cGlyYXRpb25EYXRlIjoiMjAyMi0wNy0xOFQwNDo0Mjo1MS4xNjhaIiwiaGFzVXNlclJvbGUiOmZhbHNlfQ"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "commonConfig",
+						"value": "%7B%22brand%22%3A%22wix%22%2C%22BSI%22%3A%22c88f228d-e948-4fe0-b59a-9e32e0661e83%7C2%22%7D"
+					},
+					{
+						"key": "x-wix-brand",
+						"value": "wix"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "X-Wix-Client-Artifact-Id",
+						"value": "addresses-modals"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "host",
+						"value": "addresses.wixapps.net"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"address\": {\n        \"id\": \"04511c9f-5b3b-48ae-bb12-e268f9b88834\",\n        \"fullName\": {\n            \"firstName\": \"Adam\",\n            \"lastName\": \"Hunt\"\n        },\n        \"company\": \"Teslaco\",\n        \"taxInfo\": {\n            \"id\": null,\n            \"type\": null\n        },\n        \"addressLine1\": \"345 Park Avenue\",\n        \"addressLine2\": \"3D\",\n        \"street\": {\n            \"name\": null,\n            \"number\": null\n        },\n        \"city\": \"New York\",\n        \"country\": \"USA\",\n        \"subdivision\": \"NY\",\n        \"zipCode\": \"10154\",\n        \"phoneNumber\": \"1213456789\",\n        \"location\": {\n            \"latitude\": 40.7576543,\n            \"longitude\": -73.9728429\n        }\n    },\n    \"setAsDefault\": true,\n    \"fieldMask\": {\n        \"paths\": [\n            \"fullName.firstName\",\n            \"fullName.lastName\",\n            \"company\",\n            \"addressLine1\",\n            \"addressLine2\",\n            \"city\",\n            \"country\",\n            \"subdivision\",\n            \"zipCode\",\n            \"phoneNumber\",\n            \"location.latitude\",\n            \"location.longitude\",\n            \"setAsDefault\"\n        ]\n    }\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/{{ID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Updated Adress",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "sec-ch-ua",
+						"value": "\".Not/A)Brand\";v=\"99\", \"Google Chrome\";v=\"103\", \"Chromium\";v=\"103\""
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "1657586023|PDbn-b4zkq0Y"
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "authorization",
+						"value": "BoXZnji5lLauS_LHSa0hQ8IHBNncacZ8zPFF14L6Jzo.eyJpbnN0YW5jZUlkIjoiZjQ2Y2Q1MDItZjcyZi00NGY3LTk2MzgtNWRhMWRlYjBiNGU3IiwiYXBwRGVmSWQiOiIxNTA1Yjc3NS1lODg1LWViMWItYjY2NS0xZTQ4NWQ5YmY5MGUiLCJtZXRhU2l0ZUlkIjoiMjhiNzkzZDYtNTQyNC00MDU4LTgwNDktMDI2YTRkYjAyODJmIiwic2lnbkRhdGUiOiIyMDIyLTA3LTE4VDAwOjQyOjUxLjE2OFoiLCJ1aWQiOiJjNzNhZDNmNC01NjM2LTRkZjYtODRmZi05ZGUzZDViNmJhYmQiLCJkZW1vTW9kZSI6ZmFsc2UsImFpZCI6ImEwYTQ1NzlmLTM2ODQtNGEyYS05OWE3LWI5YTVhYzQ0MDljMCIsImJpVG9rZW4iOiJkY2RiNDZkNC1hMzBiLTA0YWYtMTY3MS01ZmNiOTMwMDljYzgiLCJzaXRlT3duZXJJZCI6ImY5MTRmMTFjLWFhYjMtNDUyNy04ZDRlLWJhYjc2MjE0M2E2MCIsImV4cGlyYXRpb25EYXRlIjoiMjAyMi0wNy0xOFQwNDo0Mjo1MS4xNjhaIiwiaGFzVXNlclJvbGUiOmZhbHNlfQ"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "commonConfig",
+						"value": "%7B%22brand%22%3A%22wix%22%2C%22BSI%22%3A%22c88f228d-e948-4fe0-b59a-9e32e0661e83%7C1%22%7D"
+					},
+					{
+						"key": "x-wix-brand",
+						"value": "wix"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "X-Wix-Client-Artifact-Id",
+						"value": "address-book"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "host",
+						"value": "addresses.wixapps.net"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/{{ID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Address",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "sec-ch-ua",
+						"value": "\".Not/A)Brand\";v=\"99\", \"Google Chrome\";v=\"103\", \"Chromium\";v=\"103\""
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "1657586023|PDbn-b4zkq0Y"
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "authorization",
+						"value": "BoXZnji5lLauS_LHSa0hQ8IHBNncacZ8zPFF14L6Jzo.eyJpbnN0YW5jZUlkIjoiZjQ2Y2Q1MDItZjcyZi00NGY3LTk2MzgtNWRhMWRlYjBiNGU3IiwiYXBwRGVmSWQiOiIxNTA1Yjc3NS1lODg1LWViMWItYjY2NS0xZTQ4NWQ5YmY5MGUiLCJtZXRhU2l0ZUlkIjoiMjhiNzkzZDYtNTQyNC00MDU4LTgwNDktMDI2YTRkYjAyODJmIiwic2lnbkRhdGUiOiIyMDIyLTA3LTE4VDAwOjQyOjUxLjE2OFoiLCJ1aWQiOiJjNzNhZDNmNC01NjM2LTRkZjYtODRmZi05ZGUzZDViNmJhYmQiLCJkZW1vTW9kZSI6ZmFsc2UsImFpZCI6ImEwYTQ1NzlmLTM2ODQtNGEyYS05OWE3LWI5YTVhYzQ0MDljMCIsImJpVG9rZW4iOiJkY2RiNDZkNC1hMzBiLTA0YWYtMTY3MS01ZmNiOTMwMDljYzgiLCJzaXRlT3duZXJJZCI6ImY5MTRmMTFjLWFhYjMtNDUyNy04ZDRlLWJhYjc2MjE0M2E2MCIsImV4cGlyYXRpb25EYXRlIjoiMjAyMi0wNy0xOFQwNDo0Mjo1MS4xNjhaIiwiaGFzVXNlclJvbGUiOmZhbHNlfQ"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "commonConfig",
+						"value": "%7B%22brand%22%3A%22wix%22%2C%22BSI%22%3A%22c88f228d-e948-4fe0-b59a-9e32e0661e83%7C1%22%7D"
+					},
+					{
+						"key": "x-wix-brand",
+						"value": "wix"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "X-Wix-Client-Artifact-Id",
+						"value": "address-book"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "host",
+						"value": "addresses.wixapps.net"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/{{ID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{ID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
